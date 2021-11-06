@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All blogs</title>
+</head>
+<body>
+    <h1>Hello BLOG</h1>
+    <h2>There are {{ blogs_count }} blogs</h2>
+
+    {% for blog in blogs %}
+
+        <h2>{{ blog.title }}</h2>
+        <p>{{ blog.date }} </p>
+        <p>{{ blog.description }}</p>
+        {% if blog.url %}
+            <br><a href="{{ blog.url }}">Link</a>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>
