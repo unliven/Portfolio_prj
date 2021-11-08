@@ -6,16 +6,14 @@
 </head>
 <body>
     <h1>Hello BLOG</h1>
-    <h2>There are {{ blogs_count }} blogs</h2>
+    <h2>There are {{ blogs_count }} blog{{ blogs_count|pluralize }}</h2>
 
     {% for blog in blogs %}
 
-        <a href="{% url 'blog: detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
-        <p>{{ blog.date }} </p>
-        <p>{{ blog.description }}</p>
-        {% if blog.url %}
-            <br><a href="{{ blog.url }}">Link</a>
-        {% endif %}
+        <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+        <p>{{ blog.date| date:'y.m.d  h:i' }} </p>
+        <p>{{ blog.description| striptags | truncatechars:100 }}</p>
+
     {% endfor %}
 
 </body>
