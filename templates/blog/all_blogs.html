@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>All blogs</title>
-</head>
-<body>
+{% extends 'portf/base.html' %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
     <h1>Hello BLOG</h1>
     <h2>There are {{ blogs_count }} blog{{ blogs_count|pluralize }}</h2>
 
@@ -16,5 +14,4 @@
 
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}
