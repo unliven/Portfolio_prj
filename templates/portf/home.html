@@ -1,19 +1,19 @@
 {% extends 'portf/base.html' %}
-{% block title %}Portfolio{% endblock %}
 
 {% block content %}
-
-    <h1>This is my portfolio</h1>
-
     {% load static %}
 
-    <a href="{% url 'blog:all_blogs' %}">Blog</a>
-    <br>
+<div class="container text-center pt-lg-5">
+    <h1>Hi! I'm Vadim! </h1>
 
-    <a href="{% static 'Resume.pdf' %}">Resume</a>
     <br>
-    <img src= {% static "IMG_MESSO.jpg" %} height=auto width=25%>
+    <img src= {% static "MONTENEGRO.jpg" %} height=600 width=auto>
 
+</div>
+<div class="container pt-lg-5">
+    <h4>See my Process Control Engineer achievements:</h4>
+<br>
+<br>
     {% for project in projects %}
 
         <h2>{{ project.title }}</h2>
@@ -23,5 +23,6 @@
             <br><a href="{{ project.url }}">Link</a>
         {% endif %}
     {% endfor %}
+</div>
 
 {% endblock %}
