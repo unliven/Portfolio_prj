@@ -1,28 +1,137 @@
 {% extends 'portf/base.html' %}
 
+{% block navmenu_home %}
+    <li class="nav-item">
+        <a class="nav-link active navlink_shadow" aria-current="page" href="#pageup">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active navlink_shadow" aria-current="page" href="#ControlEngPortfolio">Engineering</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active navlink_shadow" aria-current="page" href="#Recommendations">Recommendations</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active navlink_shadow" aria-current="page" href="#Certificates">Certificates</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active navlink_shadow" aria-current="page" href="#WebDesignPortfolio">Web</a>
+    </li>
+{% endblock %}
+
 {% block content %}
     {% load static %}
 
-<div class="container text-center pt-lg-5">
-    <h1>Hi! I'm Vadim! </h1>
+{% comment %}    <div class="container-fluid" id = "pageup" style="height: 60px"></div>{% endcomment %}
 
-    <br>
-    <img src= "{% static 'MONTENEGRO.jpg' %}" height=600 width=auto>
+    <div class="container" style="margin-top: 50px">
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 50px">
+            <h1>Welcome to my portfolio page!</h1>
+        </div>
+        <div class="main_block">
+            <div style="max-width:500px; padding-left: 12px; padding-right: 12px">
+                <p class="h2" style="margin-bottom: 30px">Hi! I'm Vadim! </p>
+                <p class="fs-3" style="margin-bottom: 30px">
+                    I'm a process control engineer. My life full of activity and interesting work. I travel a lot, meet
+                    interesting people, visit places around the country. My work useful and responsible.
+                    Now I would like to share with you my achievements and try to show the World looking through my eyes. Enjoy!
+                </p>
+            </div>
 
-</div>
-<div class="container pt-lg-5">
-    <h4>Kindly see my Process Control Engineer achievements:</h4>
-<br>
-<br>
-    {% for project in projects %}
+            <img class="img-thumbnail main_image" src= "{% static 'MONTENEGRO.jpg' %}">
+        </div>
+    </div>
 
-        <h2>{{ project.title }}</h2>
-        <p>{{ project.description }}</p>
-        <img src="{{ project.image.url }}" height=auto width=10%>
-        {% if project.url %}
-            <br><a href="{{ project.url }}">Link</a>
-        {% endif %}
-    {% endfor %}
-</div>
+    <div class="container" id = "ControlEngPortfolio" style="height: 80px"></div>
+
+    <div class="container"  style="margin-bottom: 40px">
+        <h4 style="margin-bottom: 40px">See projects with my participation:</h4>
+        <div class="row">
+            {% for project in projects %}
+                <div class="col">
+                    <div class="card card_hover" style="width: 18rem; height: 446px; margin-bottom: 20px">
+                        <a href="{{ project.url }}" style="text-decoration: none; color: black" target="_blank">
+                            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} screensaver">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ project.title }}</h5>
+                                <p class="card-text">{{ project.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <a href="#" class="link_more" style="display: inline; text-align: right">See more >></a>
+    </div>
+
+    <div class="container" id = "Recommendations" style="height: 80px"></div>
+
+    <div class="container" style="margin-bottom: 40px">
+        <h4 style="margin-bottom: 40px">See my recommendations:</h4>
+        <div class="row">
+            {% for rec in recom %}
+                <div class="col">
+                    <div class="card" style="width: 420px; height: 644px; margin-bottom: 20px; border: none">
+                        <a href="{{ rec.image.url }}" style="text-decoration: none; color: black" target="_blank">
+                            <img src="{{ rec.image.url }}" class="card-img-top card_img card_hover" alt="{{ rec.title }} screensaver">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ rec.title }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <a href="#" class="link_more" style="display: inline; text-align: right">See more >></a>
+    </div>
+
+    <div class="container" id = "Certificates" style="height: 80px"></div>
+
+    <div class="container" style="margin-bottom: 40px">
+        <h4 style="margin-bottom: 40px">See my certificates:</h4>
+        <div class="row">
+            {% for certl in certif_land %}
+               <div class="col">
+                    <div class="card" style="width: 420px; height: 450px; margin-bottom: 20px; border: none">
+                        <a href="{{ certl.image.url }}" style="text-decoration: none; color: black" target="_blank">
+                            <img src="{{ certl.image.url }}" class="card-img-top card_img card_hover" alt="{{ certl.title }} screensaver">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ certl.title }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <div class="row">
+            {% for cert in certif %}
+                <div class="col">
+                    <div class="card" style="width: 420px; height: 644px; margin-bottom: 20px; border: none">
+                        <a href="{{ cert.image.url }}" style="text-decoration: none; color: black" target="_blank">
+                            <img src="{{ cert.image.url }}" class="card-img-top card_img card_hover" alt="{{ cert.title }} screensaver">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ cert.title }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <a href="#" class="link_more" style="display: inline; text-align: right">See more >></a>
+    </div>
+
+    <div class="container" id = "WebDesignPortfolio" style="height: 80px"></div>
+
+    <div class="container" style="margin-bottom: 40px">
+        <h4 style="margin-bottom: 40px">See my portfolio in Web-designing:</h4>
+        <div class="row" style="justify-content: center; padding-top: 80px; padding-bottom: 680px">
+            <p class="h2">Sorry, it's only my portfolio project yet. But i promise, there will be more soon!</p>
+        </div>
+
+    </div>
+
 
 {% endblock %}
