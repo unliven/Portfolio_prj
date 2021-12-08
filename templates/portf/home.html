@@ -21,8 +21,6 @@
 {% block content %}
     {% load static %}
 
-{% comment %}    <div class="container-fluid" id = "pageup" style="height: 60px"></div>{% endcomment %}
-
     <div class="container" style="margin-top: 50px">
         <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 50px">
             <h1>Welcome to my portfolio page!</h1>
@@ -61,7 +59,7 @@
             {% endfor %}
 
         </div>
-        <a href="#" class="link_more" style="display: inline; text-align: right">See more >></a>
+        <a href="#" class="link_more">See more >></a>
     </div>
 
     <div class="container" id = "Recommendations" style="height: 80px"></div>
@@ -70,8 +68,8 @@
         <h4 style="margin-bottom: 40px">See my recommendations:</h4>
         <div class="row">
             {% for rec in recom %}
-                <div class="col">
-                    <div class="card" style="width: 420px; height: 644px; margin-bottom: 20px; border: none">
+                <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class="card card_width" style="height: 644px">
                         <a href="{{ rec.image.url }}" style="text-decoration: none; color: black" target="_blank">
                             <img src="{{ rec.image.url }}" class="card-img-top card_img card_hover" alt="{{ rec.title }} screensaver">
                             <div class="card-body">
@@ -83,7 +81,7 @@
             {% endfor %}
 
         </div>
-        <a href="#" class="link_more" style="display: inline; text-align: right">See more >></a>
+        <a href="#" class="link_more">See more >></a>
     </div>
 
     <div class="container" id = "Certificates" style="height: 80px"></div>
@@ -92,8 +90,8 @@
         <h4 style="margin-bottom: 40px">See my certificates:</h4>
         <div class="row">
             {% for certl in certif_land %}
-               <div class="col">
-                    <div class="card" style="width: 420px; height: 450px; margin-bottom: 20px; border: none">
+               <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class="card card_width" style="height: 450px;">
                         <a href="{{ certl.image.url }}" style="text-decoration: none; color: black" target="_blank">
                             <img src="{{ certl.image.url }}" class="card-img-top card_img card_hover" alt="{{ certl.title }} screensaver">
                             <div class="card-body">
@@ -107,8 +105,8 @@
         </div>
         <div class="row">
             {% for cert in certif %}
-                <div class="col">
-                    <div class="card" style="width: 420px; height: 644px; margin-bottom: 20px; border: none">
+                <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class="card card_width" style="height: 644px;">
                         <a href="{{ cert.image.url }}" style="text-decoration: none; color: black" target="_blank">
                             <img src="{{ cert.image.url }}" class="card-img-top card_img card_hover" alt="{{ cert.title }} screensaver">
                             <div class="card-body">
@@ -120,7 +118,7 @@
             {% endfor %}
 
         </div>
-        <a href="#" class="link_more" style="display: inline; text-align: right">See more >></a>
+        <a href="#" class="link_more">See more >></a>
     </div>
 
     <div class="container" id = "WebDesignPortfolio" style="height: 80px"></div>

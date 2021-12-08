@@ -25,6 +25,11 @@
     min-width: 286px;
 }
 
+.card_hover{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .card_hover:hover{
     box-shadow: 0 0 1px 1px black;
 }
@@ -32,9 +37,21 @@
 
 .card_img{
     border: 1px solid lightgray;
-    min-width: 286px;
     transition: 1s;
+    min-width: 286px;
 }
 .card_img:hover{
+    position: relative;
+    z-index: 1;
     transform: scale(1.8);
+}
+
+.card_width{
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border: none;
+
 }
